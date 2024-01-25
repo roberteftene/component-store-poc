@@ -1,0 +1,12 @@
+<div class="list-container">
+  <ng-container *ngFor="let item of financeItems">
+    <div class="item">
+      <p>{{item.id}}</p>
+      <p>{{item.title}}</p>
+      <p>{{item.amountPaid}}</p>
+      <p>{{item.date}}</p>
+      <p>{{item.category}}</p>
+      <button (click)="handleItemViewClick(item.id)">View me!</button>
+    </div>
+  </ng-container>
+</div>

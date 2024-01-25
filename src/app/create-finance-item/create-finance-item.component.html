@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <label for="field1">Field 1:</label>
+  <input type="text" id="field1" formControlName="title">
+
+  <label for="field2">Field 2:</label>
+  <input type="text" id="field2" formControlName="amountPaid">
+
+  <label for="field3">Field 3:</label>
+  <input type="text" id="field3" formControlName="date">
+
+  <label for="field4">Field 4:</label>
+  <input type="text" id="field4" formControlName="category">
+
+  <button type="submit" [disabled]="formGroup.invalid">Submit</button>
+</form>

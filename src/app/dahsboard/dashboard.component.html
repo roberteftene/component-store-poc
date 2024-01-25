@@ -1,0 +1,23 @@
+<ng-container>
+  <button (click)="openNewItemForm()">Add new item</button>
+</ng-container>
+<div class="dashboard-container">
+  <div class="finance-items-list">
+
+    <ng-container *ngIf="this.store.financeItems$ | async as financeItems">
+      <app-finance-items-list (financeItemViewOpenEvent)="openItemView($event)"
+                              [financeItems]="financeItems">
+      </app-finance-items-list>
+    </ng-container>
+  </div>
+
+  <div class="finance-item-container">
+    <ng-container *ngIf="this.store.openedItem$ | async as openedItem">
+      <app-finance-item [financeItem]="openedItem "></app-finance-item>
+    </ng-container>
+    <ng-container *ngIf="this.store.newItemInProgress$ | async">
+      <app-create-finance-item (submitNewItemEvent)="handleNewItem($event)"></app-create-finance-item>
+    </ng-container>
+  </div>
+
+</div>

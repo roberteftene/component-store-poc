@@ -1,0 +1,11 @@
+.dashboard-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.finance-items-list {
+  flex: 2;
+}
+.finance-item-container {
+  flex: 1;
+}
